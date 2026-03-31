@@ -95,14 +95,14 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/sedan.png');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/sedan.png');
             background-size: cover;
             background-position: center;
             position: relative;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
+            font-size: clamp(3rem, 8vw, 5.5rem);
             font-weight: 700;
             margin-bottom: 20px;
             color: #fff;
@@ -145,14 +145,14 @@
 
         /* --- Global Layout --- */
         .container {
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
             padding: 100px 5%;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 60px;
         }
 
@@ -160,75 +160,96 @@
             color: var(--primary-gold);
         }
 
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-top: -50px;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
         /* --- Car Gallery --- */
         .car-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
         }
 
         .car-card {
             background: var(--card-bg);
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: var(--transition);
         }
 
         .car-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px);
             border-color: var(--primary-gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .car-image-container {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
         }
 
         .car-image {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .car-card:hover .car-image {
+            transform: scale(1.05);
         }
 
         .car-info {
-            padding: 25px;
+            padding: 30px;
         }
 
         .car-info h3 {
             color: var(--primary-gold);
-            margin-bottom: 10px;
-            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-size: 1.4rem;
         }
 
         .car-info p {
             color: var(--text-gray);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
         }
 
         /* --- Appointment Form --- */
         .afspraak-section {
-            background: rgba(212, 175, 55, 0.02);
+            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.05) 0%, rgba(5, 5, 5, 1) 50%);
             padding: 100px 5%;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .afspraak-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: var(--card-bg);
-            padding: 50px;
-            border-radius: 30px;
+            padding: 60px;
+            border-radius: 32px;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
         }
 
         .afspraak-form {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 25px;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
         .form-group.full {
@@ -236,64 +257,77 @@
         }
 
         label {
-            font-size: 0.85rem;
-            color: var(--text-gray);
+            font-size: 0.8rem;
+            color: var(--primary-gold);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            font-weight: 600;
         }
 
         input, select, textarea {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 12px;
+            padding: 18px;
+            border-radius: 14px;
             color: #fff;
             font-family: inherit;
             transition: var(--transition);
+            font-size: 1rem;
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--primary-gold);
-            background: rgba(212, 175, 55, 0.05);
+            background: rgba(212, 175, 55, 0.08);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
         }
 
         /* --- Footer --- */
         footer {
-            padding: 80px 5% 40px;
+            padding: 100px 5% 50px;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: #000;
         }
 
         .footer-logo {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary-gold);
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 2px;
         }
 
         .footer-text {
             color: var(--text-gray);
-            font-size: 0.9rem;
-            opacity: 0.6;
+            font-size: 0.95rem;
+            opacity: 0.7;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         /* --- Animations --- */
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
+            from { opacity: 0; transform: translateY(-40px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 991px) {
+            .car-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
         }
 
         @media (max-width: 768px) {
             .afspraak-form { grid-template-columns: 1fr; }
             .form-group.full { grid-column: span 1; }
             .nav-links { display: none; }
-            .hero h1 { font-size: 3rem; }
+            .hero h1 { font-size: 3.2rem; }
+            .afspraak-container { padding: 40px 25px; }
         }
     </style>
 </head>
@@ -307,46 +341,92 @@
             <a href="#onderhoud">Onderhoud</a>
             <a href="#contact">Contact</a>
         </div>
-        <a href="#onderhoud" class="btn" style="padding: 10px 20px;">Plan Service</a>
+        <a href="#onderhoud" class="btn" style="padding: 10px 24px; font-size: 0.75rem;">Direct Afspraak</a>
     </nav>
 
     <header id="home" class="hero">
-        <h1>Alqora Auto's</h1>
-        <p>Ontdek onze collectie premium occasions en ervaar service op het hoogste niveau.</p>
+        <h1>Exclusieve Mobiliteit</h1>
+        <p>Ontdek onze collectie van world-class occasions. Van iconische klassiekers tot de nieuwste technologische hoogstandjes.</p>
         <div style="display: flex; gap: 20px; margin-top: 20px;">
-            <a href="#occasions" class="btn">Bekijk Aanbod</a>
-            <a href="#onderhoud" class="btn" style="background: transparent; border: 2px solid var(--primary-gold); color: var(--primary-gold);">Werkplaats</a>
+            <a href="#occasions" class="btn">Onze Collectie</a>
+            <a href="#onderhoud" class="btn" style="background: transparent; border: 2px solid var(--primary-gold); color: var(--primary-gold);">Service & APK</a>
         </div>
     </header>
 
-    <main class="container" id="occasions">
-        <h2 class="section-title">Onze <span>Premium Occasions</span></h2>
+    <main id="occasions" class="container">
+        <h2 class="section-title">Premium <span>Selectie</span></h2>
+        <p class="section-subtitle">Zorgvuldig geselecteerde meesterwerken op wielen.</p>
         
         <div class="car-grid">
+            <!-- New: Max Verstappen F1 Car -->
             <div class="car-card">
-                <img src="images/sedan.png" alt="Executive Sedan" class="car-image">
+                <div class="car-image-container">
+                    <img src="images/f1.png" alt="Red Bull F1 Max Verstappen" class="car-image">
+                </div>
                 <div class="car-info">
-                    <h3>Executive Luxury Sedan</h3>
-                    <p>Bouwjaar 2023 | 12.500 km | Hybride</p>
-                    <a href="#" class="btn" style="width: 100%; text-align: center;">Details & Prijs</a>
+                    <h3>Red Bull Racing RB20</h3>
+                    <p>Specificatie: Formula 1 | Champion Edition | Direct beschikbaar voor verzamelaars.</p>
+                    <a href="mailto:info@alqora-autos.nl" class="btn" style="width: 100%; text-align: center;">VRAAG PRIJS AAN</a>
                 </div>
             </div>
-            
+
+            <!-- Existing: Luxury Sedan -->
             <div class="car-card">
-                <img src="images/suv.png" alt="Premium SUV" class="car-image">
+                <div class="car-image-container">
+                    <img src="images/sedan.png" alt="Executive Sedan" class="car-image">
+                </div>
                 <div class="car-info">
-                    <h3>Performance SUV X-Series</h3>
-                    <p>Bouwjaar 2024 | 5.000 km | Benzine</p>
-                    <a href="#" class="btn" style="width: 100%; text-align: center;">Details & Prijs</a>
+                    <h3>Bentley Flying Spur</h3>
+                    <p>Bouwjaar 2023 | 12.500 km | W12 Biturbo | Volledige onderhoudshistorie.</p>
+                    <a href="mailto:info@alqora-autos.nl" class="btn" style="width: 100%; text-align: center;">Details & Prijs</a>
                 </div>
             </div>
-            
+
+            <!-- Existing: SUV -->
             <div class="car-card">
-                <img src="images/sport.png" alt="Sport Convertible" class="car-image">
+                <div class="car-image-container">
+                    <img src="images/suv.png" alt="Premium SUV" class="car-image">
+                </div>
                 <div class="car-info">
-                    <h3>Sport Convertible V8</h3>
-                    <p>Bouwjaar 2022 | 28.000 km | Benzine</p>
-                    <a href="#" class="btn" style="width: 100%; text-align: center;">Details & Prijs</a>
+                    <h3>Range Rover Autobiography</h3>
+                    <p>Bouwjaar 2024 | 5.000 km | P530 LWB | Full Options & Panoramadak.</p>
+                    <a href="mailto:info@alqora-autos.nl" class="btn" style="width: 100%; text-align: center;">Details & Prijs</a>
+                </div>
+            </div>
+
+            <!-- New: Ferrari -->
+            <div class="car-card">
+                <div class="car-image-container">
+                    <img src="images/ferrari.png" alt="Ferrari SF90" class="car-image">
+                </div>
+                <div class="car-info">
+                    <h3>Ferrari SF90 Stradale</h3>
+                    <p>Bouwjaar 2024 | 1.200 km | 1000 PK Hybrid | Rosso Corsa Exclusiviteit.</p>
+                    <a href="mailto:info@alqora-autos.nl" class="btn" style="width: 100%; text-align: center;">DETAILS BEKIJKEN</a>
+                </div>
+            </div>
+
+            <!-- Existing: Sports Car -->
+            <div class="car-card">
+                <div class="car-image-container">
+                    <img src="images/sport.png" alt="Sport Convertible" class="car-image">
+                </div>
+                <div class="car-info">
+                    <h3>McLaren 720S Spider</h3>
+                    <p>Bouwjaar 2022 | 15.000 km | Carbon Fiber Pack | Track Ready.</p>
+                    <a href="mailto:info@alqora-autos.nl" class="btn" style="width: 100%; text-align: center;">Details & Prijs</a>
+                </div>
+            </div>
+
+            <!-- New: Porsche -->
+            <div class="car-card">
+                <div class="car-image-container">
+                    <img src="images/porsche.png" alt="Porsche 911 Classic" class="car-image">
+                </div>
+                <div class="car-info">
+                    <h3>Porsche 911 (930) Turbo</h3>
+                    <p>Bouwjaar 1985 | 82.000 km | Classic Silver | Volledig gerestaureerd.</p>
+                    <a href="mailto:info@alqora-autos.nl" class="btn" style="width: 100%; text-align: center;">INVESTERINGSPRIJS</a>
                 </div>
             </div>
         </div>
@@ -354,36 +434,38 @@
 
     <section id="onderhoud" class="afspraak-section">
         <div class="container" style="padding-top: 0;">
-            <h2 class="section-title">Plan uw <span>Onderhoud</span></h2>
+            <h2 class="section-title">Exclusieve <span>Werkplaats</span></h2>
+            <p class="section-subtitle">Onderhoud volgens fabrieksspecificaties door specialisten.</p>
             <div class="afspraak-container">
                 <form class="afspraak-form">
                     <div class="form-group">
                         <label>Naam</label>
-                        <input type="text" placeholder="Uw volledige naam">
+                        <input type="text" placeholder="Naam" required>
                     </div>
                     <div class="form-group">
-                        <label>E-mail</label>
-                        <input type="email" placeholder="uw@email.nl">
+                        <label>Telefoonnummer</label>
+                        <input type="tel" placeholder="06 - 12345678" required>
                     </div>
                     <div class="form-group">
                         <label>Kenteken</label>
-                        <input type="text" placeholder="XX-123-X">
+                        <input type="text" placeholder="Kenteken" required>
                     </div>
                     <div class="form-group">
-                        <label>Dienst</label>
-                        <select>
-                            <option>Kleine beurt</option>
-                            <option>Grote beurt</option>
-                            <option>APK Keuring</option>
-                            <option>Reparatie</option>
+                        <label>Type Service</label>
+                        <select required>
+                            <option value="">Kies uw service...</option>
+                            <option value="klein">Kleine Inspectie</option>
+                            <option value="groot">Grote Beurt</option>
+                            <option value="apk">APK Keuring</option>
+                            <option value="diagnose">Diagnose / Reparatie</option>
                         </select>
                     </div>
                     <div class="form-group full">
-                        <label>Bericht / Toelichting</label>
-                        <textarea rows="4" placeholder="Beschrijf hier uw wensen of eventuele problemen..."></textarea>
+                        <label>Voorkeursdatum en opmerkingen</label>
+                        <textarea rows="4" placeholder="Wanneer schikt het u en heeft u specifieke wensen?"></textarea>
                     </div>
-                    <div class="form-group full">
-                        <button type="submit" class="btn">Afspraak Aanvragen</button>
+                    <div class="form-group full" style="margin-top: 10px;">
+                        <button type="submit" class="btn" style="width: 100%;">Online Reserveren</button>
                     </div>
                 </form>
             </div>
@@ -392,8 +474,11 @@
 
     <footer id="contact">
         <div class="footer-logo">Alqora Auto's</div>
-        <p style="margin-bottom: 20px; color: var(--text-gray);">Stationsstraat 123, 1234 AB Amsterdam<br>020 - 123 4567 | info@alqora-autos.nl</p>
-        <p class="footer-text">&copy; 2026 Alqora Auto's. Perfectie in Mobiliteit. Alle rechten voorbehouden.</p>
+        <p style="margin-bottom: 25px; color: var(--text-gray);">Stationsstraat 123, 1100 AB Amsterdam<br>Maandag - Zaterdag: 09:00 - 18:00</p>
+        <div style="margin-bottom: 40px; font-size: 1.2rem;">
+            <span style="color: var(--primary-gold);">P</span> 020 - 123 4567 &nbsp;&nbsp; | &nbsp;&nbsp; <span style="color: var(--primary-gold);">E</span> info@alqora-autos.nl
+        </div>
+        <p class="footer-text">&copy; 2026 Alqora Auto's. Alle rechten voorbehouden.</p>
     </footer>
 
 </body>
