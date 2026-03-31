@@ -3,322 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alqora Auto's | Exclusive Cars & Premium Service</title>
-    <meta name="description" content="Alqora Auto's: Uw specialist in premium occasions, vakkundig onderhoud en APK. Plan direct uw afspraak.">
+    <title>Alqora Auto's | Exclusive Cars</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-gold: #D4AF37;
-            --primary-gold-hover: #F1C40F;
-            --bg-dark: #050505;
-            --card-bg: rgba(26, 26, 26, 0.7);
-            --text-white: #ffffff;
-            --text-gray: #a0a0a0;
-            --accent-glow: rgba(212, 175, 55, 0.15);
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-white);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Outfit', sans-serif;
-            letter-spacing: -0.02em;
-        }
-
-        /* --- Navigation --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 5%;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(5, 5, 5, 0.8);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .nav-logo {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-gold);
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: var(--text-white);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-gold);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,1)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        /* --- Car Gallery --- */
-        .container {
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 80px 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 60px;
-        }
-
-        .section-title span {
-            color: var(--primary-gold);
-        }
-
-        .car-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-
-        .car-card {
-            background: var(--card-bg);
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-        }
-
-        .car-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-gold);
-        }
-
-        .car-image {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            background-color: #111;
-        }
-
-        .car-info {
-            padding: 30px;
-        }
-
-        .car-info h3 {
-            color: var(--primary-gold);
-            margin-bottom: 8px;
-            font-size: 1.4rem;
-        }
-
-        .price {
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .specs {
-            color: var(--text-gray);
-            font-size: 0.85rem;
-            margin-bottom: 25px;
-            display: block;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 30px;
-            background: var(--primary-gold);
-            color: var(--bg-dark);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: var(--transition);
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            text-align: center;
-        }
-
-        #loading {
-            text-align: center;
-            color: var(--primary-gold);
-            font-weight: 600;
-            padding: 100px;
-            grid-column: 1 / -1;
-        }
-
-        #error-msg {
-            color: #ff4d4d;
-            text-align: center;
-            padding: 20px;
-            grid-column: 1 / -1;
-            display: none;
-        }
-
-        /* --- Appointment Form --- */
-        .afspraak-section {
-            background: rgba(212, 175, 55, 0.02);
-            padding: 100px 5%;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .afspraak-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            padding: 50px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        footer {
-            padding: 60px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.9rem;
-            color: var(--text-gray);
-        }
+        :root { --gold: #D4AF37; --bg: #050505; --card: #1a1a1a; --text: #fff; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+        nav { padding: 20px; text-align: center; border-bottom: 1px solid #333; }
+        .logo { color: var(--gold); font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+        .hero { padding: 60px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)); }
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+        .car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .car-card { background: var(--card); border-radius: 15px; overflow: hidden; border: 1px solid #333; }
+        .car-img { width: 100%; height: 200px; object-fit: cover; background: #222; }
+        .car-info { padding: 20px; }
+        .car-info h3 { color: var(--gold); margin: 0 0 10px; }
+        .btn { display: block; background: var(--gold); color: #000; padding: 12px; text-align: center; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 15px; }
+        #debug-info { background: #333; color: #0f0; padding: 10px; font-family: monospace; font-size: 12px; margin-top: 20px; white-space: pre-wrap; display: none; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#" class="nav-logo">Alqora Auto's</a>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#occasions">Occasions</a>
-            <a href="#onderhoud">Onderhoud</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <a href="#onderhoud" class="btn" style="padding: 10px 20px; width: auto;">Afspraak</a>
-    </nav>
+    <nav><a href="#" class="logo">ALQORA AUTO'S</a></nav>
 
-    <header id="home" class="hero">
-        <h1>Showroom Live</h1>
-        <p>Binnenkort beschikbaar: onze allernieuwste selectie uit de cloud.</p>
-    </header>
+    <div class="hero">
+        <h1>Onze Showroom</h1>
+        <p>Live aanbod vanuit onze database.</p>
+    </div>
 
-    <main class="container" id="occasions">
-        <h2 class="section-title">Huidig <span>Aanbod</span></h2>
-        
-        <div id="error-msg"></div>
-        <div class="car-grid" id="car-list">
-            <div id="loading">Showroom laden...</div>
-        </div>
-    </main>
-
-    <section id="onderhoud" class="afspraak-section">
-        <!-- Form omitted for brevity but stays same -->
-    </section>
-
-    <footer id="contact">
-        <p>&copy; 2026 Alqora Auto's | info@alqora-autos.nl</p>
-    </footer>
+    <div class="container">
+        <div id="status-msg" style="text-align: center; padding: 40px;">Laden van showroom...</div>
+        <div class="car-grid" id="car-list"></div>
+        <div id="debug-info"></div>
+    </div>
 
     <script>
-        // Use v1 for a more stable test
         const PROJECT_ID = '5qxak6xw';
         const DATASET = 'production';
         const QUERY = encodeURIComponent('*[_type == "car"]{..., "imageUrl": image.asset->url}');
-        // Using the CDN URL directly
-        const URL = `https://${PROJECT_ID}.apicdn.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
+        const URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
 
         async function fetchCars() {
-            console.log("Start ophalen van Sanity data...");
+            const statusMsg = document.getElementById('status-msg');
+            const carList = document.getElementById('car-list');
+            const debug = document.getElementById('debug-info');
+
             try {
                 const response = await fetch(URL);
-                if (!response.ok) throw new Error(`API Status: ${response.status}`);
-                
                 const data = await response.json();
-                console.log("Data van Sanity:", data);
                 
-                const carList = document.getElementById('car-list');
-                const loading = document.getElementById('loading');
+                debug.style.display = 'block';
+                debug.innerText = "Debug info: " + JSON.stringify(data, null, 2);
 
-                loading.style.display = 'none';
-
-                if (!data.result || data.result.length === 0) {
-                    carList.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">De showroom is momenteel leeg. Voeg een auto toe in je dashboard!</p>';
-                    return;
-                }
-
-                data.result.forEach(car => {
-                    const price = car.prijs ? new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(car.prijs) : 'Prijs op aanvraag';
-                    const imgUrl = car.imageUrl ? car.imageUrl : 'https://via.placeholder.com/600x400/111/D4AF37?text=Foto+onderweg';
-                    
-                    const card = `
-                        <div class="car-card">
-                            <img src="${imgUrl}" alt="${car.merk || 'Auto'}" class="car-image">
-                            <div class="car-info">
-                                <h3>${car.merk || ''} ${car.model || ''}</h3>
-                                <span class="price">${price}</span>
-                                <span class="specs">${car.bouwjaar || ''} | ${car.kilometers || ''} km | ${car.brandstof || ''}</span>
-                                <p>${car.beschrijving || ''}</p>
-                                <a href="mailto:info@alqora-autos.nl" class="btn">Info aanvragen</a>
+                if (data.result && data.result.length > 0) {
+                    statusMsg.style.display = 'none';
+                    data.result.forEach(car => {
+                        const card = `
+                            <div class="car-card">
+                                <img src="${car.imageUrl || 'https://via.placeholder.com/400x250/222/D4AF37?text=Geen+foto'}" class="car-img">
+                                <div class="car-info">
+                                    <h3>${car.merk} ${car.model}</h3>
+                                    <p>${car.bouwjaar} | ${car.prijs ? '€ ' + car.prijs.toLocaleString() : 'Prijs op aanvraag'}</p>
+                                    <p>${car.beschrijving || ''}</p>
+                                    <a href="mailto:info@alqora-autos.nl" class="btn">NEEM CONTACT OP</a>
+                                </div>
                             </div>
-                        </div>
-                    `;
-                    carList.innerHTML += card;
-                });
-            } catch (error) {
-                console.error("DEBUG ERROR:", error);
-                document.getElementById('loading').style.display = 'none';
-                const errorMsg = document.getElementById('error-msg');
-                errorMsg.style.display = 'block';
-                errorMsg.innerText = '⚠️ Er is een verbindingsprobleem met de showroom. Controleer je CORS instellingen op Sanity.io/manage.';
+                        `;
+                        carList.innerHTML += card;
+                    });
+                } else {
+                    statusMsg.innerText = "De showroom is momenteel leeg. Voeg een auto toe in Sanity en druk op 'Publish'.";
+                }
+            } catch (err) {
+                statusMsg.innerText = "Fout bij verbinding: " + err.message;
             }
         }
-
         fetchCars();
     </script>
 </body>
